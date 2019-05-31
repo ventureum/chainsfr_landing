@@ -9563,7 +9563,8 @@ input[type=radio] + label:before {
   background-color: #fff !important;
 }
 .bg-dark {
-  background-color: #2f1893 !important;
+  /* background-color: #2f1893 !important; */
+  background-color: #393386 !important;
 }
 .bg-main {
   background-color: #1e0e62;
