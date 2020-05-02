@@ -1,0 +1,45 @@
+name: Release
+on:
+  release:
+    types: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: 'us-east-1'
+    steps:
+    - name: Checkout Git
+      uses: actions/checkout@v2
+      
+    - run: aws s3 sync ./ s3://www.chainsfr.com --delete
+      if: github.event_name == 'push'
+    
+    # invalidate cdn
+    - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CHAINSFR_LANDING_DISTRIBUTION_ID }} --paths "/*"
+      if: github.event_name == 'push'
+
+    - name: Notify slack success
+      if: success()
+      env:
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      uses: voxmedia/github-action-slack-notify-build@v1
+      with:
+        # Updates existing message from the first step
+        message_id: ${{ steps.slack.outputs.message_id }}
+        channel_id: CESRN89MF
+        status: SUCCESS
+        color: good
+    - name: Notify slack failure
+      if: failure()
+      env:
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      uses: voxmedia/github-action-slack-notify-build@v1
+      with:
+        # Updates existing message from the first step
+        message_id: ${{ steps.slack.outputs.message_id }}
+        channel_id: CESRN89MF
+        status: FAILED
+        color: danger
