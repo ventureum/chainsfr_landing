@@ -113,6 +113,29 @@
 	}
 }
 
+/* z-index */
+
+.zi-{
+	&0{
+		z-index:0;
+	}
+	&1{
+		z-index:1;
+	}
+	&2{
+		z-index:2;
+	}
+	&3{
+		z-index:3;
+	}
+	&4{
+		z-index:4;
+	}
+	&5{
+		z-index:5;
+	}
+}
+
 /* Links */
 
 .link{
@@ -293,20 +316,26 @@
 		}
 		&-action-1{
 			border:2px solid $action_1;
+			color:$action_1;
 			&:hover{
 				border-color:darken($action_1, 20%);
+				color:darken($action_1, 20%);
 			}
 		}
 		&-action-2{
 			border:2px solid $action_2;
+			color:$action_2;
 			&:hover{
 				border-color:darken($action_2, 20%);
+				color:darken($action_2, 20%);
 			}
 		}
 		&-action-3{
 			border:2px solid $action_3;
+			color:$action_3;
 			&:hover{
 				border-color:darken($action_3, 20%);
+				color:darken($action_3, 20%);
 			}
 		}
 	}
@@ -542,6 +571,14 @@ select{
 	border:0;
 	outline:none;
 	color:$color_main;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+	appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+	&::-ms-expand { 
+		display: none;
+	}
 	&.color-white{
 		color:$color_white;
 		background-image:url(../i/fa-angle-down-white.png);
@@ -808,48 +845,6 @@ input[type=radio]{
 	}
 }
 
-/* Popup video */
-
-.overlay{
-	display:none;
-	position:fixed;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	background:rgba(0,0,0,0.8);
-	cursor:pointer;
-	z-index:9998;
-}
-
-.video_popup{
-	display:none;
-	position:fixed;
-	top:50%;
-	left:50%;
-	transform:translate(-50%,-50%);
-	width:100%;
-	height:100%;
-	z-index:9999;
-	.close{
-		position:absolute;
-		top:20px;
-		right:20px;
-		opacity:1;
-		&:hover{
-			opacity:0.8;
-			transform:rotate(-180deg);
-		}
-	}
-	iframe{
-		display:block;
-		width:calc(100% - 140px);
-		height:calc((100vw - 140px) * 0.56);
-		max-height:95vh;
-		border:none;
-	}
-}
-
 /* Play button */
 
 .play{
@@ -919,6 +914,86 @@ input[type=radio]{
 	}
 }
 
+/* Alerts */
+
+.alert{
+	display:none;
+	left:50%;
+	transform:translateX(-50%);
+	width:100%;
+	max-width:970px;
+	color:$color_white;
+	z-index:2000;
+	&-dismissable, &-dismissible{
+		.close{
+			top:0;
+		}
+	}
+	&.fixed-top{
+		margin-top:1rem;
+	}
+	&-primary{
+		background:$color_main;
+		border-color:$color_main;
+	}
+	&-secondary{
+		background:$color_heading;
+		border-color:$color_heading;
+	}
+	&-success{
+		background:$action_1;
+		border-color:$action_1;
+	}
+	&-danger{
+		background:$action_3;
+		border-color:$action_3;
+	}
+	&-warning, &-info{
+		background:$action_2;
+		border-color:$action_2;
+	}
+	&-light{
+		background:$bg_light;
+		border-color:$bg_light;
+		color:$color_main;
+		&.alert .close:hover{
+			color:$color_main;
+		}
+	}
+	&-dark{
+		background:$bg_dark;
+		border-color:$bg_dark;
+	}
+	.close{
+		text-shadow:none;
+		&:hover{
+			color:$color_white;
+		}
+	}
+}
+
+/* Google ReCaptcha */
+
+.grecaptcha-overlay{
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:1000;
+	cursor:pointer;
+}
+
+.grecaptcha-popup{
+	display:none;
+	position:fixed;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	z-index:1000;
+}
+
 /* Dropdown menu */
 
 .dropdown{
@@ -956,6 +1031,23 @@ input[type=radio]{
 	&.dropdown-menu-right{
 		margin-left:auto;
 		margin-right:-20px;
+	}
+}
+
+/* Dropdown popup in Navigation */
+
+.navigation_popup{
+	position:absolute;
+	top:100%;
+	left:0;
+	right:0;
+	border-top:2px solid $color_gray;
+	opacity:0;
+	visibility:hidden;
+	transition:opacity 0.25s;
+	&.opened{
+		opacity:1;
+		visibility:visible;
 	}
 }
 
@@ -1138,7 +1230,7 @@ $i: 12;
 	color:$color_white;
 	&.link{
 		&:hover{
-			color:darken($color_white, 20%);
+			color:rgba($color_white,0.7);
 		}
 	}
 }
@@ -1221,6 +1313,43 @@ $i: 12;
 	&-action-3{
 		background-color:$action_3;
 	}
+}
+
+/* color filters */
+
+[class^="color-filter-"], [class*=" color-filter-"]{
+	&:not(.absolute), &:not(.fixed){
+		position:relative;
+	}
+	&:before{
+		content:"";
+		display:block;
+		position:absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		z-index:0;
+	}
+}
+/* 
+picture[class^="color-filter-"], picture[class*=" color-filter-"]{
+	display:inline-block;
+	overflow:hidden;
+	&:before{
+		z-index:1;
+	}
+}
+ */
+$i: 1;
+@while $i < 10 {
+	.color-filter-light-#{$i}:before{
+		background-color:rgba($bg_light,0.1 * $i);
+	}
+	.color-filter-dark-#{$i}:before{
+		background-color:rgba($bg_dark,0.1 * $i);
+	}
+	$i: $i + 1;
 }
 
 /* Border-radiuses */

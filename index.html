@@ -1,211 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143578703-1"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
 
-			gtag('config', 'UA-143578703-1');
-		</script>
+<head>
+	<!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css?family=DM+Sans:100,200,300,400,600,500,700,800,900|DM+Sans:100,200,300,400,500,600,700,800,900"
+		rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,500,700,800,900|Poppins:100,200,300,400,500,600,700,800,900&amp;subset=latin"
+		rel="stylesheet">
+	<!-- Bootstrap 4.3.1 CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- Slick 1.8.1 jQuery plugin CSS (Sliders) -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<!-- Fancybox 3 jQuery plugin CSS (Open images and video in popup) -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+	<!-- AOS 2.3.4 jQuery plugin CSS (Animations) -->
+	<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+	<!-- FontAwesome CSS -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<!-- Startup 3 CSS (Styles for all blocks) -->
+	<link href="css/style.css" rel="stylesheet" />
+	<!-- jQuery 3.3.1 -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-		<meta charset="utf-8" >
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<!-- Primary Meta Tags -->
-		<title>Pay Crypto via Email from your Favorite Wallets | Chainsfr</title>
-		<meta name="title" content="Pay Crypto via Email from your Favorite Wallets | Chainsfr">
-		<meta name="description" content="No more nonsensical crypto address.
-		Protected by Security Answer. Cancel if needed.
-		Connect to Popular Wallets like
-		Coinbase, MetaMask, Ledger, and more.">
+	<meta charset="utf-8" >
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="i/favicon.png" type="image/x-icon">
+	<link rel="chainsfr favicon" type="image/png" href="i/favicon.png" />
+	
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,500,700,800,900|Poppins:100,200,300,400,500,600,700,800,900&amp;subset=latin" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="css/style.css" rel="stylesheet" />
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U"></script>
 
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://chainsfr.com/">
-		<meta property="og:title" content="Pay Crypto via Email from your Favorite Wallets | Chainsfr">
-		<meta property="og:description" content="No more nonsensical crypto address.
-		Protected by Security Answer. Cancel if needed.
-		Connect to Popular Wallets like
-		Coinbase, MetaMask, Ledger, and more.">
-		<meta property="og:image" content="https://i.imgur.com/3Z9Bn0o.png">
+	<!-- SEO & Meta Tags starts here -->	
+	<!-- Primary Meta Tags -->
+	<title>Chainsfr - Pay Bitcoin, Ethereum With Email </title>
+	<meta name="title" content="Chainsfr - Pay Bitcoin, Ethereum With Email ">
+	<meta name="description" content="Stop worrying about sending bitcoin to the wrong address. Chainsfr lets you pay cryptocurrency to anyone thorough emails. Just like Venmo, but for Crypto.">
 
-		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image">
-		<meta property="twitter:url" content="https://chainsfr.com/">
-		<meta property="twitter:title" content="Pay Crypto via Email from your Favorite Wallets | Chainsfr">
-		<meta property="twitter:description" content="No more nonsensical crypto address.
-		Protected by Security Answer. Cancel if needed.
-		Connect to Popular Wallets like
-		Coinbase, MetaMask, Ledger, and more.">
-		<meta property="twitter:image" content="https://i.imgur.com/3Z9Bn0o.png">
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://chainsfr.com/">
+	<meta property="og:title" content="Chainsfr - Pay Bitcoin, Ethereum With Email ">
+	<meta property="og:description" content="Stop worrying about sending bitcoin to the wrong address. Chainsfr lets you pay cryptocurrency to anyone thorough emails. Just like Venmo, but for Crypto.">
+	<meta property="og:image" content="https://chainsfr-public.s3.amazonaws.com/landing_meta.png">
 
-		<link rel="icon" href="i/favicon.png" type="image/x-icon">
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,500,700,800,900|Poppins:100,200,300,400,500,600,700,800,900&amp;subset=latin" rel="stylesheet">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-		<link href="css/style.css" rel="stylesheet" />
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U"></script>
-		<!-- Hotjar Tracking Code for chainsfr.com -->
-		<script>
-			(function(h,o,t,j,a,r){
-					h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-					h._hjSettings={hjid:1794452,hjsv:6};
-					a=o.getElementsByTagName('head')[0];
-					r=o.createElement('script');r.async=1;
-					r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-					a.appendChild(r);
-			})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-		</script>
-		<link rel="chainsfr favicon" type="image/png" href="i/favicon.png"/>
-	</head>
-	<!-- Start of Intercom messenger script -->
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://chainsfr.com/">
+	<meta property="twitter:title" content="Chainsfr - Pay Bitcoin, Ethereum With Email ">
+	<meta property="twitter:description" content="Stop worrying about sending bitcoin to the wrong address. Chainsfr lets you pay cryptocurrency to anyone thorough emails. Just like Venmo, but for Crypto.">
+	<meta property="twitter:image" content="https://chainsfr-public.s3.amazonaws.com/landing_meta.png">
+	<!-- SEO & Meta Tags ends here -->
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143578703-1"></script>
 	<script>
-		window.intercomSettings = {
-			app_id: "gjd0qon8"
-		};
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-143578703-1');
 	</script>
+
+	<!-- Hotjar Tracking Code for chainsfr.com -->
 	<script>
-		(function () {
-			var w = window;
-			var ic = w.Intercom;
-			if (typeof ic === "function") {
-				ic('reattach_activator');
-				ic('update', w.intercomSettings);
+		(function(h,o,t,j,a,r){
+				h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+				h._hjSettings={hjid:1794452,hjsv:6};
+				a=o.getElementsByTagName('head')[0];
+				r=o.createElement('script');r.async=1;
+				r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+				a.appendChild(r);
+		})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+	</script>
+</head>
+
+<!-- Start of Intercom messenger script -->
+<script>
+	window.intercomSettings = {
+		app_id: "gjd0qon8",
+		custom_launcher_selector: "#contact_us"
+	};
+</script>
+<script>
+	(function () {
+		var w = window;
+		var ic = w.Intercom;
+		if (typeof ic === "function") {
+			ic('reattach_activator');
+			ic('update', w.intercomSettings);
+		} else {
+			var d = document;
+			var i = function () {
+				i.c(arguments);
+			};
+			i.q = [];
+			i.c = function (args) {
+				i.q.push(args);
+			};
+			w.Intercom = i;
+			var l = function () {
+				var s = d.createElement('script');
+				s.type = 'text/javascript';
+				s.async = true;
+				s.src = 'https://widget.intercom.io/widget/gjd0qon8';
+				var x = d.getElementsByTagName('script')[0];
+				x.parentNode.insertBefore(s, x);
+			};
+			if (w.attachEvent) {
+				w.attachEvent('onload', l);
 			} else {
-				var d = document;
-				var i = function () {
-					i.c(arguments);
-				};
-				i.q = [];
-				i.c = function (args) {
-					i.q.push(args);
-				};
-				w.Intercom = i;
-				var l = function () {
-					var s = d.createElement('script');
-					s.type = 'text/javascript';
-					s.async = true;
-					s.src = 'https://widget.intercom.io/widget/gjd0qon8';
-					var x = d.getElementsByTagName('script')[0];
-					x.parentNode.insertBefore(s, x);
-				};
-				if (w.attachEvent) {
-					w.attachEvent('onload', l);
-				} else {
-					w.addEventListener('load', l, false);
-				}
+				w.addEventListener('load', l, false);
 			}
-		})();
-	</script>
-	<!-- End of Intercom messenger script -->
-	<body>
+		}
+	})();
+</script>
 
-<!-- <nav class="navigation_6 pt-20 pb-20 lh-40 text-center fixed-top bg-light">
-	<div class="container px-xl-0">
-		<div class="row align-items-center">
-			<div class="mb-10 mb-md-0 col-lg-3 col-md-4 text-md-left relative">
-				<a href="#" class="logo link color-main"><img src="i/chainsfr_logo.svg" class="relative img mw-full mh-30"  alt="chainsfr logo" /></a>
-			</div>
-			<div class="col-lg-9 col-md-8 text-md-right d-none d-sm-none d-md-block">
-				<a href="#faq" class="link color-main mx-15">FAQ</a>
-				<a href="https://app.chainsfr.com/" class="ml-15 btn sm action-1 f-16">Log in</a>
+<Style>
+	.fa-animation {
+		color: #E90606;
+		margin: 0 3px;
+		font-size: 16px;
+		animation: pound .35s infinite alternate;
+		-webkit-animation: pound .35s infinite alternate;
+	}
+
+	@-webkit-keyframes pound {
+		to {
+			transform: scale(1.1)
+		}
+	}
+
+	@keyframes pound {
+		to {
+			transform: scale(1.1)
+		}
+	}
+</Style>
+
+<!-- End of Intercom messenger script -->
+
+<body>
+
+	<!-- Navigation 6 -->
+	<nav class="navbar navbar-expand-lg navbar-light pt-20 pb-10 bg-light lh-40 text-center navigation_6"
+		style="box-shadow: 0px 0 0px #d2d2d2;">
+		<div class="container px-xl-0 d-block">
+			<div class="row">
+				<div class="col-xl-7 col-lg-6 text-md-left d-flex justify-content-between">
+					<div class="d-flex-inline">
+						<a href="#" class="logo link color-main">
+							<img src="i/chainsfr_logo.svg" class="relative img mw-160" alt="chainsfr logo" />
+						</a>
+					</div>
+					<div class="d-flex-inline">
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+							aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+					</div>
+				</div>
+				<div class="col-xl-5 col-lg-6">
+					<div class="collapse navbar-collapse" id="navbarToggler">
+						<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+							<!-- <div class="d-inline-block px-20 dropdown">
+								<a href="#" class="link color-main dropdown-toggle" id="navigation_2_dropdown_1"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+								<div class="bg-light dropdown-menu" aria-labelledby="navigation_2_dropdown_1">
+									<div>
+										<a href="#" class="link color-main">Startup</a>
+									</div>
+									<div>
+										<a href="#" class="link color-main">Slides</a>
+									</div>
+									<div>
+										<a href="#" class="link color-main">Qards</a>
+									</div>
+								</div>
+							</div> -->
+							<div class="nav-item px-20 mb-10  dropdown">
+								<a href="#" class="link color-main semibold  dropdown-toggle"
+									id="navigation_2_dropdown_1" data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false">Products</a>
+								<div class="bg-light dropdown-menu rounded" aria-labelledby="navigation_2_dropdown_1" style="box-shadow: 1px 1px 15px #e9e9e9;">
+									<a href="#pay-via-email" class="dropdown-item link color-main ">Pay via Email</a>
+									<!-- <a href="./sdk.html" class="dropdown-item link color-main ">Identity SDK</a>
+										<a href="#invoicing" class="dropdown-item link color-main ">Invoicing</a> -->
+									<!-- <a href="#demo" class="dropdown-item link color-main ">Try Our Demo</a> -->
+									<a href="https://testnet.chainsfr.com/" target="_blank"
+										class="dropdown-item link color-main ">Try Our Demo</a>
+								</div>
+							</div>
+							<div class="d-inline-block px-20 dropdown mb-10">
+								<a href="#" class="link color-main semibold dropdown-toggle"
+									id="navigation_2_dropdown_2" data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false">Resources</a>
+								<div class="bg-light dropdown-menu rounded" aria-labelledby="navigation_2_dropdown_2" style="box-shadow: 1px 1px 15px #e9e9e9;">
+									<a href="https://feedback.chainsfr.com/changelog" target="_blank"
+										class="dropdown-item link color-main ">Change Log</a>
+									<a href="https://github.com/ventureum/Chainsfr" target="_blank"
+										class="dropdown-item link color-main ">Github</a>
+									<a href="https://gsuite.google.com/marketplace/app/chainsfr_payment/754636752811"
+										target="_blank" class="dropdown-item link color-main ">G Suite marketplace</a>
+									<a href="https://help.chainsfr.com/en/collections/1864539-security" target="_blank"
+										class="dropdown-item link color-main ">Security</a>
+									<a href="http://status.chainsfr.com/" target="_blank"
+										class="dropdown-item link color-main ">System Status</a>
+								</div>
+							</div>
+							<div class="d-inline-block px-20 dropdown mb-10">
+								<a href="#" class="link color-main semibold dropdown-toggle"
+									id="navigation_2_dropdown_3" data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false">About</a>
+								<div class="bg-light dropdown-menu rounded" aria-labelledby="navigation_2_dropdown_3" style="box-shadow: 1px 1px 15px #e9e9e9;">
+									<a href="https://ventureum.io/" target="_blank"
+										class="dropdown-item link color-main ">About us</a>
+									<a href="https://help.chainsfr.com/en/" target="_blank"
+										class="dropdown-item link color-main ">Help Center</a>
+									<a href="https://feedback.chainsfr.com/feature-requests" target="_blank"
+										class="dropdown-item link color-main ">Feedback</a>
+									<a id="contact_us" href="#" class="dropdown-item link color-main ">Chat with Us</a>
+								</div>
+							</div>
+							<div><a href="https://app.chainsfr.com/" class="btn ml-15 sm action-3 f-16">Sign in</a>
+							</div>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-</nav> -->
+	</nav>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light navigation_6 pt-20 pb-20 lh-40 text-center fixed-top">
-	<div class="container px-xl-0 d-block">
-		<div class='row'>
-			<div class="col-xl-10 col-lg-9 text-md-left d-flex justify-content-between">
-				<div class="d-flex-inline">
-					<a href="#" class="logo link color-main">
-						<img src="i/chainsfr_logo.svg" class="relative img mw-full mh-30"  alt="chainsfr logo" />
+	<section id="pay-via-email" class="call_to_action_30 bg-light pt-20 pb-65 mt-10 text-sm-left">
+		<div class="container px-xl-0">
+			<div class="row">
+				<div class="col-xl-5 col-lg-6 col-md-6 col-sm-7 col-xs-7 pt-15 pb-60 inner">
+					<h1 class="mt-10 mb-15 pt-30 bold">Pay Cryptocurrency With Email</h1>
+					<div class="mt-30">
+						<div class="mb-10">
+							<div class="f-18 medium"> <span class="f-24">✨</span> &nbsp;&nbsp;Send to Anyone</div>
+						</div>
+						<div class="mb-10">
+							<div class="f-18 medium"> <span class="f-24">🤝</span> &nbsp;&nbsp;Cancel if Needed</div>
+						</div>
+						<div class="mb-10">
+							<div class="f-18 medium"> <span class="f-24">🤩</span> &nbsp;&nbsp;Say Bye to Mistakes</div>
+						</div>
+					</div>
+					<div class="mt-30 d-sm-flex flex-wrap button vrlps-trigger">
+						<a href="https://app.chainsfr.com/" class="mt-20 mr-10 btn action-3 pl-10">
+							<img src="i/logo_google_white.svg" alt="Google Logo" width=32 class="mr-10 mt-2 mb-10" />
+							<span class="ml-10 mr-10">Sign up with Google</span>
+						</a>
+					</div>
+				</div>
+				<div
+					class="col-xl-7 col-lg-6 col-md-5 col-sm-5 col-xs-12 text-center justify-content-center align-self-center">
+					<img src="i/gmail_mac_black.svg" class="img" width="640" alt="" />
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="pt-50 pb-65 bg-light application_4">
+		<div class="container px-xl-0">
+			<div class="row justify-content-md-between justify-content-xl-end">
+				<div
+					class="col-8 col-md-6 col-lg-5 col-xl-4 d-flex align-items-center order-3 order-xl-1 order-lg-1 order-md-3 order-sm-3 order-xs-3">
+					<img src="i/phone.png" srcset="i/phone@2x.png 2x" alt="" class="img-fluid pr-60" />
+				</div>
+				<div class="col-12 col-md-12 col-lg-7 col-xl-8 no-gutters order-2">
+					<h2 class="mb-25 pt-50 pb-45 color-main small">Like Venmo. &nbsp;&nbsp;For Crypto.</h2>
+					<div class="row justify-content-center justify-content-sm-between">
+						<div class="col-12 col-sm-6 pb-50 no-gutters">
+							<div class="pb-15 color-main f-32 bold">
+								<div class="f-32 medium">👋</div>
+							</div>
+							<div class="pb-10 color-main f-18 bold">Send Crypto with Ease</div>
+							<div class="col-xl-10 f-16 text-adaptive op-8">
+								<div>
+									Using email addresses, you can send cryptocurrency to anyone in your contacts. The
+									payee only needs a Google account to deposit your payment.
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-sm-6 pb-50 no-gutters">
+							<div class="pb-15 color-main f-32 bold">
+								<div class="f-32 medium">☂️</div>
+							</div>
+							<div class="pb-10 color-main f-18 bold">Prevent Human Errors</div>
+							<div class="col-xl-10 f-16 text-adaptive op-8">
+								<div>
+									No more worrying about sending cryptocurrency to a wrong address. "Security Answer"
+									can prevent you from loss when you make a mistake accidentally.
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-sm-6 pb-50 no-gutters">
+							<div class="pb-15 color-main f-32 bold">
+								<div class="f-32 medium">🚀</div>
+							</div>
+							<div class="pb-10 color-main f-18 bold">Ready for Your Wallets</div>
+							<div class="col-xl-10 f-16 text-adaptive op-8">
+								<div>
+									Send and receive payment with your existing cryptocurrency wallets. Chainsfr
+									supports Bitcoin, Ethereum, and ERC20 stable coins.
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-sm-6 pb-50 no-gutters">
+							<div class="pb-15 color-main f-32 bold">
+								<div class="f-32 medium">🔔</div>
+							</div>
+							<div class="pb-10 color-main f-18 bold">Stay Notified & Organized</div>
+							<div class="col-xl-10 f-16 text-adaptive op-8">
+								<div>
+									Get notified when your payment is accepted. You can also keep track of all
+									your finished payments with print-ready receipts.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="pt-20 pb-20 bg-light content_29">
+		<div class="container px-xl-0">
+			<div class="row justify-content-center text-center">
+				<div class="col-lg-10">
+					<div class="row align-items-center ml-20 mr-20 justify-content-sm-center no-gutters">
+						<div class="col-lg-3 col-sm-4 col-6 mb-35 holder">
+							<img src="i/metamask_grey.png" srcset="i/metamask_grey@2x.png 2x" alt=""
+								class="img-fluid ml-5 mr-5" />
+						</div>
+						<div class="col-lg-3 col-sm-4 col-6 mb-35 holder">
+							<img src="i/ledger_grey.png" srcset="i/ledger_grey@2x.png 2x" alt=""
+								class="img-fluid ml-5 mr-5" />
+						</div>
+						<div class="col-lg-3 col-sm-4 col-6 mb-35 holder">
+							<img src="i/trust_grey.png" srcset="i/trust_grey@2x.png 2x" alt=""
+								class="img-fluid ml-5 mr-5" />
+						</div>
+						<div class="col-lg-3 col-sm-4 col-6 mb-35 holder">
+							<img src="i/coinbase_grey.png" srcset="i/coinbase_grey@2x.png 2x" alt=""
+								class="img-fluid ml-5 mr-5" />
+						</div>
+						<div class="col-lg-3 col-sm-4 col-6 mb-35 holder">
+							<img src="i/coinbasewallet_grey.png" srcset="i/coinbasewallet_grey@2x.png 2x" alt=""
+								class="img-fluid ml-5 mr-5" />
+						</div>
+						<div class="col-lg-3 col-sm-4 col-6 mb-35 holder">
+							<img src="i/bitpay_grey.png" srcset="i/bitpay_grey@2x.png 2x" alt=""
+								class="img-fluid ml-5 mr-5" />
+						</div>
+						<div class="col-lg-3 col-sm-4 col-6 mb-35 holder">
+							<img src="i/walletconnect_grey.png" srcset="i/walletconnect_grey@2x.png 2x" alt=""
+								class="img-fluid ml-5 mr-5" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="demo" class="mt-50 mb-65 bg-dark color-white text-center text-lg-left call_to_action_11">
+		<div class="container px-xl-0 pt-30 pb-30">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-xl-8 col-lg-8">
+					<h6 class="f-18 regular text-adaptive">Want to try Chainsfr with free cryptos? We've got you
+						covered.
+					</h6>
+				</div>
+				<div class="col-xl-4 col-lg-4 text-lg-right">
+					<a href="https://testnet.chainsfr.com/" target="_blank"
+						class="btn mt-30 mt-lg-0 md border-white bg-light color-main">Try Demo with Free ETH </a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="pt-50 pb-65 bg-light feature_37 text-sm-left">
+		<div class="container px-xl-0">
+			<div class="row">
+				<div class="col-xl-7 col-lg-7 col-md-7 col-sm-5 col-xs-5 pt-10 pb-10 inner d-flex">
+					<div class="text-sm-left">
+						<img src="i/google.svg" srcset="i/google.svg 2x" alt="Google Logo"
+							class="mb-20 align-items-center" width=48 />
+						<h2 class="mw-480 small">Seamless Integration with Google</h2>
+					</div>
+				</div>
+				<div class="col-xl-5 col-lg-5 col-md-5 col-sm-7 col-xs-7 pt-15 pb-15 inner d-flex">
+					<div class="text-left">
+						<div class="f-18 medium mb-20"><i class="fab fa-google f-20 w-30 mr-10"></i>Login without
+							Password</div>
+						<div class="f-18 medium mb-20"><i class="fab fa-google-drive f-20 w-30 mr-10"></i>Own Your
+							Assets in Drive</div>
+						<div class="f-18 medium mb-20"><i class="fab fa-chrome f-20 w-30 mr-10"></i>Keep Synced with
+							Chrome</div>
+						<div class="f-18 medium mb-20"><i class="fas fa-lock f-20 w-30 mr-10"></i>Stay Secure with
+							Google</div>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="d-flex flex-wrap button vrlps-trigger col-12">
+					<span class="mt-15 pb-15 mr-15 f-18 medium">Available on</span>
+					<a href="https://gsuite.google.com/marketplace/app/chainsfr_payment/754636752811"
+						class="bg-light btn lg border-gray">
+						<img src="i/logo_gsm_lockup_default_2x.png" alt="Google Suite Marketplace Logo" class="mb-1"
+							height="40" />
 					</a>
 				</div>
-				<div class="d-flex-inline">
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-				</div>
-			</div>
-			<div class="col-xl-2 col-lg-3">
-				<div class="collapse navbar-collapse" id="navbarToggler">
-					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-						<li class="nav-item mt-10 mb-10">
-								<a href="#faq" class="link color-main mx-15">FAQ</a>
-						</li>
-						<li class="nav-item mt-10 mb-10 vrlps-trigger">
-							<span class="ml-15 btn sm action-1" style="color:white !important"> Get&nbsp;Early&nbsp;Access</span>
-						</li>
-					</ul>
-				</div>
 			</div>
 		</div>
-	</div>
-</nav>
+	</section>
 
-
-<section class="call_to_action_30 bg-light pt-105 mt-100 text-center text-sm-left">
-	<div class="container px-xl-0">
-		<div class="row">
-			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-6 pt-15 pb-100 inner">
-				<h2 class="mb-15 small">Send cryptocurrency by email</h2>
-				<div class="f-22 color-heading text-adaptive">
-					We aim to make cryptocurrency transaction friendly, fault-tolerant and easy to use. All you need is a Google account, the recipient’s email address, and a security answer to start a safe transfer.
-				</div>
-				<div class="mt-30 d-sm-flex flex-wrap button vrlps-trigger">
-					<span class="mt-20 mr-10 btn action-1" style="color:white !important">Get Early Access</span>
-				</div>
-			</div>
-			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-6 pt-15 pb-100 d-flex align-items-center">
-				<img src="i/send-landing.svg" class="absolute img" width="100%" alt="" />
-			</div>
-		</div>
-	</div>
-</section>
-
-<section id="send" class="content_20 bg-dark pt-105 pb-100">
-	<div class="container px-xl-0">
-		<div class="row justify-content-center">
-			<div class="col-xl-10 col-lg-11">
-				<h2 class="small color-white">How to Send</h2>
-				<div class="row">
-					<div class="mt-25 col-lg-10 inner">
-						<div class="pb-55 relative block">
-							<div class="content_20_line"></div>
-							<div class="bg-gray color-heading radius_full w-40 h-40 f-18 medium lh-40 text-center number">1</div>
-							<div class="ml-70 pt-10 block_inner">
-								<div class="f-heading f-18 medium color-white">Connect to your wallet</div>
-								<div class="mt-20 color-transparent-white text-adaptive">
-									Choose from either Drive wallet, MetaMask or Ledger Hardware Wallet to start a transfer
+	<section class="pt-50 pb-65 bg-light application_4">
+		<div class="container px-xl-0">
+			<div class="row justify-content-md-between justify-content-xl-end">
+				<div class="col-12 no-gutters order-2">
+					<h2 class="mb-25 pt-50 pb-45 color-main small">Never Compromise on Security</h2>
+					<div class="row justify-content-center justify-content-sm-between">
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 pb-50 no-gutters">
+							<div class="pb-10 color-main f-18 bold">Non-Custodial</div>
+							<div class="col-xl-10 f-16 text-adaptive op-8">
+								<div>
+									You own your payments and assets. We do not control
+									them. Neither can Google.
 								</div>
 							</div>
 						</div>
-						<div class="pb-50 relative block">
-							<div class="content_20_line"></div>
-							<div class="bg-gray color-heading radius_full w-40 h-40 f-18 medium lh-40 text-center number">2</div>
-							<div class="ml-70 pt-10 block_inner">
-								<div class="f-heading f-18 medium color-white">Set up transfer details</div>
-								<div class="mt-20 color-transparent-white text-adaptive">
-									<div>
-										Fill in the amount, recipient’s email and a security answer
-									</div>
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 pb-50 no-gutters">
+							<div class="pb-10 color-main f-18 bold">Two-Factor Authentication</div>
+							<div class="col-xl-10 f-16 text-adaptive op-8">
+								<div>
+									With Google 2-Step Verification, you’ll protect your
+									account with both your password and your phone.
 								</div>
 							</div>
 						</div>
-						<div class="relative block">
-							<div class="bg-gray color-heading radius_full w-40 h-40 f-18 medium lh-40 text-center number">3</div>
-							<div class="ml-70 pt-10 block_inner">
-								<div class="f-heading f-18 medium color-white">Review and Send</div>
-								<div class="mt-20 color-transparent-white text-adaptive">
-									<div>
-										Review transfer details before sending it. Transfer receipts and status updates will be sent to you by email
-									</div>
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 pb-50 no-gutters">
+							<div class="pb-10 color-main f-18 bold">Security Compliance</div>
+							<div class="col-xl-10 f-16 text-adaptive op-8">
+								<div>
+									Your payments and assets are all kept in your Google drive, which complies with
+									SOC2 & SOC3 Security Principle.
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 pb-50 no-gutters">
+							<div class="pb-10 color-main f-18 bold">Multi-Signature Escrow</div>
+							<div class="col-xl-10 f-16 text-adaptive op-8">
+								<div>
+									Multi-signatures & smart contracts are embeded in our escrow architecture to
+									ensure secure and smooth user experience.
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 pb-50 no-gutters">
+							<div class="pb-10 color-main f-18 bold">Frontend Encryption</div>
+							<div class="col-xl-10 f-16 text-adaptive op-8">
+								<div>
+									All sensitive data is locally encrypted on your device
+									before transmission.
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 pb-50 no-gutters">
+							<div class="pb-10 color-main f-18 bold">Open Source</div>
+							<div class="col-xl-10 f-16 text-adaptive op-8">
+								<div>
+									You are invited to join our latest develpments.
+								</div>
+								<div>
+									<a href="https://github.com/ventureum/Chainsfr" target="_blank"
+										class="btn border-gray color-main text-adaptive op-8 f-16 mt-15"> <i
+											class="fab fa-github mr-10"></i>Source Code</a>
 								</div>
 							</div>
 						</div>
@@ -213,199 +492,169 @@
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<section id="features" class="feature_3 pt-105 pb-70 text-center" style="background-color: #FCFCFF;">
-	<div class="container px-xl-0">
-		<div class="row justify-content-center">
-			<div class="col-xl-9 col-lg-10">
-				<h2 class="small" >We Support</h2>
-				<div class="mt-25 mb-65 f-22 color-heading op-7 text-adaptive description">
+	<section id="demo" class="mt-50 mb-65 bg-dark color-white text-center text-lg-left call_to_action_11">
+		<div class="container px-xl-0 pt-30 pb-30">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-xl-8 col-lg-8">
+					<h6 class="f-18 regular text-adaptive">We are building more features. Your feedback will help us
+						improve.
+					</h6>
+				</div>
+				<div class="col-xl-4 col-lg-4 text-lg-right">
+					<a href="https://feedback.chainsfr.com/feature-requests" target="_blank"
+						class="btn mt-30 mt-lg-0 md color-main bg-light">Vote on New Features</a>
 				</div>
 			</div>
 		</div>
+	</section>
 
-		<div class="row justify-content-center align-items-stretch">
-			<div class="col-lg-4 col-md-8 col-sm-10 d-flex align-items-stretch">
-				<div class="px-45 pt-50 pb-60 radius10 mb-30 block">
-					<img src="i/logo_drive.svg" class="img" height="72" alt="" />
-					<div class="mt-20 mb-20 f-22 title">Drive Wallet</div>
-					<div class="color-heading text-adaptive">
-						Drive Wallet is a Google-powered Non-custodial cryptocurrency wallet.
-						It abstracts out private key management to a third party system - Google Drive, 
-						which enables users to create/store private keys, transfer cryptocurrencies - all without having to install any software.
+	<footer id="footer" class="pt-50 pb-30 bg-light footer_10">
+		<div class="container px-xl-0">
+			<div class="row">
+				<div class="col-lg-1">
+				</div>
+				<div class="mb-50 mb-lg-0 col-lg-3 justify-content-center align-items-">
+					<div><img src="i/chainsfr_logo.svg" class="relative img mw-full mh-30" alt="chainsfr logo" /></div>
+					<div><a href="https://app.chainsfr.com/" class="mt-40 btn border-gray color-main">Get Started
+							Now</a></div>
+				</div>
+				<div class="mb-50 mb-sm-0 col-lg-2 col-sm-3 col-6">
+					<div class="mb-35 f-18 medium title">Product</div>
+					<div class="mb-10">
+						<a href="#" class="link color-main">Pay via Email</a>
+					</div>
+					<div class="mb-10">
+						<a href="https://testnet.chainsfr.com/" target="_blank" class="link color-main">Try Our Demo</a>
+					</div>
+				</div>
+				<div class="mb-50 mb-sm-0 col-lg-2 col-sm-3 col-6">
+					<div class="mb-35 f-18 medium title">Resource</div>
+					<div class="mb-10">
+						<a href="https://feedback.chainsfr.com/changelog" target="_blank" class="link color-main">Change
+							Log</a>
+					</div>
+					<div class="mb-10">
+						<a href="https://github.com/ventureum/Chainsfr" target="_blank"
+							class="link color-main">Github</a>
+					</div>
+					<div class="mb-10">
+						<a href="https://gsuite.google.com/marketplace/app/chainsfr_payment/754636752811"
+							target="_blank" class="link color-main">G Suite Marketplace</a>
+					</div>
+					<div class="mb-10">
+						<a href="https://help.chainsfr.com/en/collections/1864539-security" target="_blank"
+							class="link color-main">Security</a>
+					</div>
+					<div class="mb-10">
+						<a href="http://status.chainsfr.com/" target="_blank" class="link color-main">System Status</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-sm-3 col-6">
+					<div class="mb-35 f-18 medium title">About</div>
+					<div class="mb-10">
+						<a href="https://ventureum.io/" target="_blank" class="link color-main">About us</a>
+					</div>
+					<div class="mb-10">
+						<a href="https://help.chainsfr.com/en/" target="_blank" class="link color-main">Help Center</a>
+					</div>
+					<div class="mb-10">
+						<a href="https://feedback.chainsfr.com/feature-requests" target="_blank"
+							class="link color-main">Feedback</a>
+					</div>
+					<div class="mb-10">
+						<a id="contact_us" href="#footer" class="link color-main">Chat with Us</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-sm-3 col-6">
+					<div class="mb-35 f-18 medium title">Social</div>
+					<div class="mb-10">
+						<a href="https://twitter.com/chainsfr_com" target="_blank"
+							class="link color-main"></i>Twitter</a>
+					</div>
+					<div class="mb-10">
+						<a href="https://www.youtube.com/channel/UCrn4L7Gh-pMe0PJj8xOv5sw" target="_blank"
+							class="link color-main"></i>Youtube</a>
+					</div>
+					<div class="mb-10">
+						<a href="https://medium.com/chainsfr" target="_blank" class="link color-main"></i>Medium</a>
+					</div>
+					<div class="mb-10">
+						<a href="https://www.instagram.com/chainsfr_com/" target="_blank"
+							class="link color-main"></i>Instagram</a>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-8 col-sm-10 d-flex align-items-stretch">
-				<div class="px-45 pt-50 pb-60 radius10 mb-30 block ">
-					<img src="i/logo_metamask.png" class="img" height="72" alt="Metamask Logo" />
-					<div class="mt-20 mb-20 f-22 title">Metamask</div>
-					<div class="color-heading text-adaptive">
-						MetaMask is a bridge that allows you to visit the distributed web of tomorrow in your browser today.
-						MetaMask includes a secure identity vault, providing a user interface to manage your identities on different sites and sign blockchain transactions
-					</div>
+			<div>
+				<div class="mt-60 hr h-1 bg-main op-3">
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-8 col-sm-10 d-flex align-items-stretch">
-				<div class="px-45 pt-50 pb-60 radius10 mb-30 block">
-					<img src="i/logo_ledger.png" class="img" height="72" alt="Ledger Logo" />
-					<div class="mt-20 mb-20 f-22 title">Ledger</div>
-					<div class="color-heading text-adaptive">
-						The Ledger Hardware Wallet is a secure device that stores your private keys. Make sure all your crypto assets are safe, wherever you go
+
+			<div class="row align-items-center">
+				<div class="col-lg-6 text-lg-left op-8">
+					<a href="https://help.chainsfr.com/en/articles/3303336-terms-of-use" target="_blank"
+						class="link color-main mt-10 mr-30">Terms of Service</a>
+					<a href="https://help.chainsfr.com/en/articles/3961208-privacy-policy" target="_blank"
+						class="link color-main mt-10 mr-30">Privacy Policy</a>
+					<a href="https://help.chainsfr.com/en/articles/3961867-cookie-policy" target="_blank"
+						class="link color-main mt-10 mr-30">Cookie Policy</a>
+				</div>
+				<div class="col-lg-6 text-lg-right op-8">
+					<div class="text-adaptive mt-10">
+						Built with <i class="fas fa-heart fa-animation"></i> in Toronto by <a
+							href="https://ventureum.io/" target="_blank" class="color-main">Ventureum Inc</a>. ©
+						2018-2020
 					</div>
 				</div>
+
 			</div>
 		</div>
-	</div>
-</section>
+	</footer>
 
-<section id="receive" class="content_20 bg-dark pt-105 pb-100">
-	<div class="container px-xl-0">
-		<div class="row justify-content-center">
-			<div class="col-xl-10 col-lg-11">
-				<h2 class="small color-white">Accept and Deposit</h2>
-				<div class="row">
-					<div class="mt-25 col-lg-10 inner">
-						<div class="pb-55 relative block">
-							<div class="content_20_line"></div>
-							<div class="bg-gray color-heading radius_full w-40 h-40 f-18 medium lh-40 text-center number">1</div>
-							<div class="ml-70 pt-10 block_inner">
-								<div class="f-heading f-18 medium color-white">Get Email Notification</div>
-								<div class="mt-20 color-transparent-white text-adaptive">
-									When someone sends you an transfer, you will receive a notification via email indicating a transfer has been sent to you
-								</div>
-							</div>
-						</div>
-						<div class="pb-50 relative block">
-							<div class="content_20_line"></div>
-							<div class="bg-gray color-heading radius_full w-40 h-40 f-18 medium lh-40 text-center number">2</div>
-							<div class="ml-70 pt-10 block_inner">
-								<div class="f-heading f-18 medium color-white">Enter Security Answer</div>
-								<div class="mt-20 color-transparent-white text-adaptive">
-									<div>
-										Simply click the link in the notification email, login using your Google account, and enter your security answer
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="relative block">
-							<div class="bg-gray color-heading radius_full w-40 h-40 f-18 medium lh-40 text-center number">3</div>
-							<div class="ml-70 pt-10 block_inner">
-								<div class="f-heading f-18 medium color-white">Deposit to Wallet</div>
-								<div class="mt-20 color-transparent-white text-adaptive">
-									<div>
-										With the correct security answer, you will be able to deposit the funds into the wallet of your choice
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+	<!-- forms alerts -->
+	<div class="alert alert-success alert-dismissible fixed-top alert-form-success" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+				aria-hidden="true">&times;</span></button>
+		Thanks for your message!
 	</div>
-</section>
+	<div class="alert alert-warning alert-dismissible fixed-top alert-form-check-fields" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+				aria-hidden="true">&times;</span></button>
+		Please, fill in required fields.
+	</div>
+	<div class="alert alert-danger alert-dismissible fixed-top alert-form-error" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+				aria-hidden="true">&times;</span></button>
+		<div class="message">An error occurred while sending data :( Please, check if your hosting supports PHP and
+			check how to set form data sending <a href="https://designmodo.com/startup/documentation/#form-handler"
+				target="_blank" class="link color-transparent-white">here</a>.</div>
+	</div>
 
-<section id="faq" class="content_19 pt-105 pb-90" style="background-color: #FCFCFF;">
-	<div class="container px-xl-0">
-		<div class="row justify-content-center">
-			<div class="col-xl-10 col-lg-11">
-				<h2 class="small text-left text-lg-center" >Your Questions Answered</h2>
-				<div class="row justify-content-center justify-content-lg-between">
-					<div class="col-lg-6 mt-45 block" >
-						<div class="f-heading medium f-18 title">Is Chainsfr free?</div>
-						<div class="mt-10 color-heading text-adaptive">
-							Yes. The Chainsfr service itself does not charge any service fee. However you still have to pay transaction fees on the blockchain.
-						</div>
-					</div>
-					<div class="col-lg-6 mt-45 block" >
-						<div class="f-heading medium f-18 title">How does Chainsfr work and how safe is Chainsfr?</div>
-						<div class="mt-10 color-heading text-adaptive">
-							As a financial and cryptocurrency service, we try our best to build Chainsfr as secure as possible. Chainsfr service use your Google account to store your crypto wallet and transfer information.
-						</div>
-					</div>
-				</div>
-				<div class="row justify-content-center justify-content-lg-between">
-					<div class="col-lg-6 mt-45 block" >
-						<div class="f-heading medium f-18 title">Do I need to register for an Chainsfr account to send or receive?</div>
-						<div class="mt-10 color-heading text-adaptive">
-							No. You only need a Google account. You can track the status of your transaction through the link in your email.
-						</div>
-					</div>
-					<div class="col-lg-6 mt-45 block" >
-						<div class="f-heading medium f-18 title">Does Chainsfr store my private keys?</div>
-						<div class="mt-10 color-heading text-adaptive">
-							No. We do not store any private keys in our database. The private keys of Drive Wallet are stored in your own Google Drive space.
-						</div>
-					</div>
-				</div>
-				<div class="row justify-content-center justify-content-lg-between">
-					<div class="col-lg-6 mt-45 block" >
-						<div class="f-heading medium f-18 title">Is Chainsfr open-source?</div>
-						<div class="mt-10 color-heading text-adaptive">
-							Yes. Chainsfr is open-source under the MIT License.
-						</div>
-					</div>
-					<div class="col-lg-6 mt-45 block" >
-						<div class="f-heading medium f-18 title">Do you provide support for customers?</div>
-						<div class="mt-10 color-heading text-adaptive">
-							Yes. If you have any questions don't hesitate to contact us at 
-							<a href="https://chat.chainsfr.com/channel/general" target="_blank" class="link color-main"> chat.chainsfr.com </a>
-						</div>
-					</div>
-					<div class="mt-30 d-sm-flex flex-wrap buttons mx-auto">
-						<a href="https://faq.chainsfr.com" target="_blank" class="mt-20 btn border-gray color-main">Learn More</a>
-					</div>
-				</div>
-			</div>
+	<!-- gReCaptcha popup (uncomment if you need a recaptcha integration) -->
+
+	<div class="bg-dark op-8 grecaptcha-overlay"></div>
+	<div class="bg-light radius10 w-350 h-120 px-20 pt-20 pb-20 grecaptcha-popup">
+		<div class="w-full h-full d-flex justify-content-center align-items-center">
+			<div id="g-recaptcha" data-sitekey="PUT_YOUR_SITE_KEY_HERE"></div>
 		</div>
 	</div>
-</section>
+	<script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
 
-<footer class="footer_13 bg-dark pt-45 pb-60 color-white text-center text-lg-left">
-	<div class="container px-xl-0">
-		<div class="lh-40 footer_links">
-			<a href="https://app.chainsfr.com/" class="f-14 semibold text-uppercase sp-10 link color-white mr-20">Log in</a>
-			<a href="https://testnet.chainsfr.com" class="f-14 semibold text-uppercase sp-10 link color-white mx-20">Try on Testnet</a>
-			<a href="#send" class="f-14 semibold text-uppercase sp-10 link color-white mx-20">How to Send</a>
-			<a href="#receive" class="f-14 semibold text-uppercase sp-10 link color-white mx-20">How to Receive</a>
-			<a href="#faq" class="f-14 semibold text-uppercase sp-10 link color-white mx-20">FAQ</a>
-		</div>
-		<div >
-			<div class="mt-35 mb-40 hr h-2 bg-white op-3"></div>
-		</div>
-		<div class="row">
-			<div class="col-lg-7">
-				<div class="row">
-					<div class="col-xl-4 col-lg-5" >
-						<a href="#" class="logo link color-white">chainsfr</a>
-					</div>
-					<div class="mt-15 mb-15 my-lg-0 col-xl-8 col-lg-7">
-						<div class="text-adaptive">
-							Chainsfr is a cryptocurrency transfer service, powered by Google Drive APIs and Amazon Web Services.
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-5 text-lg-right" >
-				<a href="https://help.chainsfr.com/en/articles/3303336-terms-of-use" target="_blank" class="link color-white mx-15">Terms</a>
-				<a href="https://help.chainsfr.com/en/articles/3961208-privacy-policy" target="_blank" class="link color-white mx-15">Privacy</a>
-				<span class="d-inline-block socials">
-					<a href="https://chat.chainsfr.com" target="_blank" class="link color-white mx-15"><i class="fab fa-rocketchat"></i></a>
-					<a href="https://twitter.com/chainsfr_com" target="_blank" class="link color-white mx-15"><i class="fab fa-twitter"></i></a>
-					<a href="https://github.com/ventureum/Chainsfr" target="_blank" class="link color-white mx-15"><i class="fab fa-github"></i></a>
-				</span>
-			</div>
-		</div>
-	</div>
-</footer>
-
-<script src="js/slick.min.js"></script>
-<script src="js/aos.min.js"></script>
-<script src="js/jquery.maskedinput.min.js"></script>
-<script src="js/script.js"></script>
-<script>!function(a,b,c,d,t){var e,f=a.getElementsByTagName("head")[0];if(!a.getElementById(c)){if(e=a.createElement(b),e.id=c,e.setAttribute("data-vrlps-ucid",d),e.setAttribute("data-vrlps-version","2"), e.setAttribute("data-vrlps-template", t),e.src="https://app.viral-loops.com/popup_assets/js/vl_load_v2.min.js",window.ub){jQuery=null,$=null;var g=a.createElement(b);g.src="https://code.jquery.com/jquery-2.2.4.min.js",f.appendChild(g)}f.appendChild(e);var h=a.createElement("link");h.rel="stylesheet",h.type="text/css",h.href="https://app.viral-loops.com/static/vl-loader.css",f.appendChild(h);var i=a.createElement("div");i.id="vl-overlay",i.style.display="none";var j=a.createElement("div");j.id="vl-loader",i.appendChild(j),a.addEventListener("DOMContentLoaded",function(b){a.body.appendChild(i);for(var c=a.getElementsByClassName("vrlps-trigger"),d=0;d<c.length;d++)c[d].removeAttribute("href"),c[d].onclick=function(){a.getElementById("vl-overlay").style.display="block"};var e=a.querySelectorAll("[data-vl-widget='popupTrigger']");[].forEach.call(e,function(b){var c=a.createElement("div");c.className="vl-embedded-cta-loader",b.appendChild(c)})})}}(document,"script","vrlps-js","Pi4B6XtdykCM8nr9FTQAkCeOnEY","waitlist");</script>
+	<!-- Bootstrap 4.3.1 JS -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+	<!-- Fancybox 3 jQuery plugin JS (Open images and video in popup) -->
+	<!-- <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script> -->
+	<!-- Google maps JS API -->
+	<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U"></script> -->
+	<!-- Slick 1.8.1 jQuery plugin JS (Sliders) -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<!-- AOS 2.3.4 jQuery plugin JS (Animations) -->
+	<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+	<!-- Maskedinput jQuery plugin JS (Masks for input fields) -->
+	<script src="js/jquery.maskedinput.min.js"></script>
+	<!-- Startup 3 JS (Custom js for all blocks) -->
+	<script src="js/script.js"></script>
 </body>
+
 </html>
