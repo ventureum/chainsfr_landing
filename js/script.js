@@ -10,6 +10,13 @@ $(window).on('popstate',function(e){
 	}
 });
 
+$(function () {
+	$(document).scroll(function () {
+		var $nav = $(".fixed-top");
+		$nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+	  });
+  });
+
 $(document).ready(function() {
 	SF_scripts();
 });
@@ -90,10 +97,10 @@ function SF_scripts(){
 	});
 	
 	// Remove z-index for section, where dropdown was closed
-	$(".dropdown").on("hidden.bs.dropdown", function () {
-		var section = SF_dropdown_parent($(this));
-		section.css("z-index","auto");	
-	})
+	// $(".dropdown").on("hidden.bs.dropdown", function () {
+	// 	var section = SF_dropdown_parent($(this));
+	// 	section.css("z-index","auto");	
+	// })
 	
 	// Navigation dropdown popup
 
