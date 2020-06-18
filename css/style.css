@@ -28,6 +28,8 @@ body {
   line-height: 26px;
   color: #1E0E62;
   -webkit-font-smoothing: antialiased;
+  padding-top: 74px;
+  /* background: #ddd; */
 }
 body.dev {
   background: #ccc;
@@ -69,6 +71,34 @@ nav {
 }
 nav.transparent {
   background: transparent;
+}
+
+.fixed-top.scrolled {
+  background-color: #ffffff !important;
+  box-shadow: 0px 0 15px #d2d2d2;
+  transition: background-color 200ms linear;
+}
+
+.fixed-top.scrolled .dropdown-toggle {
+  color: #1E0E62;
+}
+
+.fixed-top.scrolled #primary_login {
+  background-color: #1E0E62;
+  color: #ffffff;
+}
+
+.fixed-top.scrolled #primary_logo {
+  content:url(../i/chainsfr_logo.svg);
+}
+
+.fixed-top.scrolled #nav_try_demo {
+  color: #1E0E62;
+}
+
+.fixed-top.scrolled #nav-collapse-button {
+  background-color: #ffffff;
+  color: #1E0E62;
 }
 
 a, button {
@@ -419,11 +449,10 @@ b, strong {
     font-size: 16px;
     line-height: 26px;
   }
-
   .btn.lg {
     height: 50px;
     line-height: 50px;
-    padding: 0 30px;
+    padding: 0 4px;
     font-size: 18px;
     font-weight: 500;
   }
