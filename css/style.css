@@ -75,7 +75,7 @@ nav.transparent {
 
 .fixed-top.scrolled {
   background-color: #ffffff !important;
-  box-shadow: 0px 0 15px #d2d2d2;
+  box-shadow: 0px 0 10px #d2d2d2;
   transition: background-color 200ms linear;
 }
 

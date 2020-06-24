@@ -61,12 +61,12 @@ document.addEventListener('DOMContentLoaded', function() {
       '👌&nbsp;Easy deposit. No wallet required',
       '😊&nbsp;Take back control of your crypto experience'
     ],
-    typeSpeed: 0,
+    typeSpeed: 10,
     backSpeed: 0,
     // smartBackspace: true,
     // fadeOut: true,
     shuffle: true,
-    // startDelay: 0,
+    startDelay: 500,
     backDelay: 5000,
     cursorChar: '_',
     loop: true
