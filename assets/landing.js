@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
   new Typed('#typed3', {
     strings: [      
       '✔️&nbsp;Send in seconds. &nbsp;Cancel if needed. &nbsp;',
-      '🔒&nbsp;Secure. &nbsp;Encrypted. &nbsp;Non-custodial. &nbsp;',
+      '🔒&nbsp;Non-custodial. &nbsp;Encrypted. &nbsp;Secure. &nbsp;',
       '🤩&nbsp;Say goodbye to accidental mistakes. &nbsp;',
       '✨&nbsp;No more nonsensical crypto address. &nbsp;',
       '👌&nbsp;Easy deposit. &nbsp;No wallet required. &nbsp;',
