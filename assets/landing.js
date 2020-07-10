@@ -54,21 +54,22 @@ document.addEventListener('DOMContentLoaded', function() {
   // });
 
   new Typed('#typed3', {
-    strings: [      
-      '✔️&nbsp;Send in seconds. &nbsp;Cancel if needed. &nbsp;',
-      '🔒&nbsp;Non-custodial. &nbsp;Encrypted. &nbsp;Secure. &nbsp;',
+    strings: [   
+      // '🔒&nbsp;A non-custodial cryptocurrency payment service. &nbsp;',   
+      '✔️&nbsp;Send to anyone in seconds. &nbsp;Cancel if needed. &nbsp;',
+      // '🔒&nbsp;Non-custodial. &nbsp;Encrypted. &nbsp;Secure. &nbsp;',
       '🤩&nbsp;Say goodbye to accidental mistakes. &nbsp;',
-      '✨&nbsp;No more nonsensical crypto address. &nbsp;',
-      '👌&nbsp;Easy deposit. &nbsp;No wallet required. &nbsp;',
-      '😊&nbsp;Take back control of your crypto experience. &nbsp;'
+      '✨&nbsp;No more nonsensical crypto address. &nbsp;'
+      // '👌&nbsp;Easy deposit. &nbsp;No wallet required. &nbsp;',
+      // '😊&nbsp;Take back control of your crypto experience. &nbsp;'
     ],
-    typeSpeed: 10,
+    typeSpeed: 0,
     backSpeed: 0,
-    // smartBackspace: true,
-    // fadeOut: true,
+    smartBackspace: true,
+    fadeOut: true,
     // shuffle: true,
     startDelay: 500,
-    backDelay: 6000,
+    backDelay: 8000,
     cursorChar: '_',
     loop: true
   });
