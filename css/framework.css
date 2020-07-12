@@ -211,6 +211,13 @@
 .btn.action-3:hover {
   background-color: #100835;
 }
+.btn.action-4 {
+  background-color: #a894ff;
+  color: #000000;
+}
+.btn.action-4:hover {
+  background-color: #795cfc;
+}
 .btn.action-white {
   background-color: #ffffff;
   color: #1e0e62;
@@ -296,6 +303,12 @@
 .btn.border-dark:hover {
   border-color: #391bbb;
 }
+.btn.border-black {
+  border: 2px solid #000000;
+}
+.btn.border-black:hover {
+  border-color: #111111;
+}
 .btn.border-action-1 {
   border: 2px solid #f89c35;
   color: #f89c35;
@@ -319,6 +332,14 @@
 .btn.border-action-3:hover {
   border-color: #030109;
   color: #030109;
+}
+.btn.border-action-4 {
+  border: 2px solid #a08aff;
+  color: #a08aff;
+}
+.btn.border-action-4:hover {
+  border-color: #a08aff;
+  color: #a08aff;
 }
 
 /* inputs */
@@ -390,6 +411,9 @@
 .input.border-action-3 {
   border: 2px solid #1e0e62;
 }
+.input.border-action-4 {
+  border: 2px solid #a08aff;
+}
 .input.focus-main:focus {
   border-color: #1E0E62;
 }
@@ -416,6 +440,9 @@
 }
 .input.focus-action-3:focus {
   border-color: #1e0e62;
+}
+.input.focus-action-4:focus {
+  border-color: #a08aff;
 }
 .input.placeholder-white::-moz-placeholder {
   color: #ffffff;
@@ -488,6 +515,15 @@
 }
 .input.placeholder-action-3:-ms-input-placeholder {
   color: #1e0e62;
+}
+.input.placeholder-action-4::-moz-placeholder {
+  color: #a08aff;
+}
+.input.placeholder-action-4::-webkit-input-placeholder {
+  color: #a08aff;
+}
+.input.placeholder-action-4:-ms-input-placeholder {
+  color: #a08aff;
 }
 
 /* Selects */
@@ -583,6 +619,9 @@ input[type=checkbox].border-action-2 + label:before, input[type=radio].border-ac
 input[type=checkbox].border-action-3 + label:before, input[type=radio].border-action-3 + label:before {
   border: 2px solid #1e0e62;
 }
+input[type=checkbox].border-action-4 + label:before, input[type=radio].border-action-4 + label:before {
+  border: 2px solid #a08aff;
+}
 input[type=checkbox].bg-main + label:before, input[type=radio].bg-main + label:before {
   background-color: #1E0E62;
 }
@@ -612,6 +651,9 @@ input[type=checkbox].bg-action-2 + label:before, input[type=radio].bg-action-2 +
 }
 input[type=checkbox].bg-action-3 + label:before, input[type=radio].bg-action-3 + label:before {
   background-color: #1e0e62;
+}
+input[type=checkbox].bg-action-4 + label:before, input[type=radio].bg-action-4 + label:before {
+  background-color: #a08aff;
 }
 input[type=checkbox].focus-main:checked + label:before, input[type=radio].focus-main:checked + label:before {
   border-color: #1E0E62;
@@ -655,6 +697,11 @@ input[type=checkbox].focus-action-3:checked + label:before, input[type=radio].fo
   background-color: #1e0e62;
   color: #ffffff;
 }
+input[type=checkbox].focus-action-4:checked + label:before, input[type=radio].focus-action-4:checked + label:before {
+  border-color: #a08aff;
+  background-color: #a08aff;
+  color: #000000;
+}
 
 input[type=checkbox]:checked + label:before {
   content: "";
@@ -675,7 +722,7 @@ input[type=radio] + label:before {
 
 /* Other elements */
 .logo {
-  font-family: Poppins;
+  font-family: Proxima Nova;
   font-size: 24px;
   color: #1E0E62;
   font-weight: 700;
@@ -808,6 +855,10 @@ input[type=radio] + label:before {
 .play.action-3 {
   background: #1e0e62;
   color: #ffffff;
+}
+.play.action-4 {
+  background: #a08aff;
+  color: #000000;
 }
 .play .fa, .play .fas {
   position: absolute;
@@ -11668,11 +11719,11 @@ input[type=radio] + label:before {
 
 /* Font families */
 .f-heading {
-  font-family: Poppins;
+  font-family: Proxima Nova;
 }
 
 .f-main {
-  font-family: Poppins;
+  font-family: Proxima Nova;
 }
 
 /* Font sizes */
@@ -12312,6 +12363,13 @@ input[type=radio] + label:before {
   color: #100835;
 }
 
+.action-4 {
+  color: #a08aff;
+}
+.action-4.link:hover {
+  color: #795cfa;
+}
+
 .color-main {
   color: #1E0E62;
 }
@@ -12366,6 +12424,20 @@ input[type=radio] + label:before {
 }
 .color-green.link:hover {
   color: #1e4e3a;
+}
+
+.color-purple {
+  color: #8D73FF;
+}
+.color-purple.link:hover {
+  color: #795bff;
+}
+
+.color-black {
+  color: #000000;
+}
+.color-black.link:hover {
+  color: #333333;
 }
 
 .color-orange {
@@ -12425,6 +12497,9 @@ input[type=radio] + label:before {
 .bg-darkgray {
   background-color: #555555;
 }
+.bg-black {
+  background-color: #1f1f1f;
+}
 .bg-lightgray {
   background-color: #eeeeee;
 }
@@ -12436,6 +12511,9 @@ input[type=radio] + label:before {
 }
 .bg-action-3 {
   background-color: #1e0e62;
+}
+.bg-action-4 {
+  background-color: #a08aff;
 }
 
 /* color filters */

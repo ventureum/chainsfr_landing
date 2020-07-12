@@ -22,7 +22,7 @@
 */
 /* 1. Common styles */
 body {
-  font-family: DM Sans;
+  font-family: Proxima Nova;
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
@@ -80,25 +80,25 @@ nav.transparent {
 }
 
 .fixed-top.scrolled .dropdown-toggle {
-  color: #1E0E62;
+  color: #000000;
 }
 
 .fixed-top.scrolled #primary_login {
-  background-color: #1E0E62;
+  background-color: #1f1f1f;
   color: #ffffff;
 }
 
 .fixed-top.scrolled #primary_logo {
-  content:url(../i/chainsfr_logo.svg);
+  content:url(../i/v3_full_dark.png);
 }
 
 .fixed-top.scrolled #nav_try_demo {
-  color: #1E0E62;
+  color: #000000;
 }
 
 .fixed-top.scrolled #nav-collapse-button {
   background-color: #ffffff;
-  color: #1E0E62;
+  color: #000000;
 }
 
 a, button {
@@ -137,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-margin-after: 0;
   margin: 0;
   font-weight: 600;
-  font-family: Poppins;
+  font-family: Proxima Nova;
 }
 
 h1, h2 {
