@@ -750,7 +750,9 @@
 
 		// send email api
 		var send_email;
+		var message_shown
 		async function postData() {
+			if (message_shown) message_shown.hide()
 			const response = await fetch('https://staging.api.chainsfr.com/transfer', {
 				method: 'POST', // *GET, POST, PUT, DELETE, etc.
 				headers: {
@@ -768,82 +770,85 @@
 				send_email = -1;
 				if (text.includes("unregistered user")) {
 					$("#registered_user_message").show();
+					message_shown = $("#registered_user_message")
 				} else {
 					$("#fail_message").show();
+					message_shown = $("#fail_message")
 				}
 			} else {
 				$("#success_message").show();
+				message_shown = $("#success_message")
 			}
 		}
 
 		// progress button effect 
 		var send_button = document.getElementById('email_me_eth');
-		(function () {
-			'use strict';
-			window.addEventListener('load', function () {
-				// Fetch all the forms we want to apply custom Bootstrap validation styles to
-				var forms = document.getElementsByClassName('needs-validation');
-				var send_button = document.getElementById('email_me_eth');
-				// Loop over them and prevent submission
-				var validation = Array.prototype.filter.call(forms, function (form) {
-					send_button.addEventListener('click', function (event) {
-						if (form.checkValidity() === false) {
-							event.preventDefault();
-							event.stopPropagation();
+		window.addEventListener('load', function () {
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			var forms = document.getElementsByClassName('needs-validation');
+			var send_button = document.getElementById('email_me_eth');
+			// Loop over them and prevent submission
+			var validation = Array.prototype.filter.call(forms, function (form) {
+				send_button.addEventListener('click', function (event) {
+					if (message_shown) message_shown.hide()
+					if (form.checkValidity() === false) {
+						event.preventDefault();
+						event.stopPropagation();
+					} else {
+						const receiverEmail = document.getElementById("destination_email").value
+						const sendCounter = localStorage.getItem('sendCounter')
+						const lastDate = localStorage.getItem('lastDate')
+						const curDate = (new Date()).getDate().toString()
+						const sendTime = localStorage.getItem(receiverEmail)
+						if (sendTime) {
+							// this email address has been used
+							$('#duplicate_email_message').show()
+							message_shown = $('#duplicate_email_message')
+							return
 						} else {
-							const receiverEmail = document.getElementById("destination_email").value
-							const sendCounter = localStorage.getItem('sendCounter')
-							const lastDate = localStorage.getItem('lastDate')
-							const curDate = (new Date()).getDate().toString()
-							const sendTime = localStorage.getItem(receiverEmail)
-							if (sendTime) {
-								// this email address has been used
-								$('#duplicate_email_message').show()
-								return
-							} else {
-								localStorage.setItem(receiverEmail, new Date().toString())
-								if (lastDate === curDate) {
-									if (!sendCounter) {
-										localStorage.setItem('sendCounter', '1')
-									} else {
-										localStorage.setItem('sendCounter', (parseInt(sendCounter) + 1).toString())
-									}
-									if (parseInt(sendCounter) > 3) {
-										$('#limit_exceed_message').show()
-										return
-									}
-								} else {
-									// different date, reset counter and date
+							localStorage.setItem(receiverEmail, new Date().toString())
+							if (lastDate === curDate) {
+								if (!sendCounter) {
 									localStorage.setItem('sendCounter', '1')
-									localStorage.setItem('lastDate', curDate.toString())
+								} else {
+									localStorage.setItem('sendCounter', (parseInt(sendCounter) + 1).toString())
 								}
+								if (parseInt(sendCounter) > 3) {
+									$('#limit_exceed_message').show()
+									message_shown = $('#limit_exceed_message')
+									return
+								}
+							} else {
+								// different date, reset counter and date
+								localStorage.setItem('sendCounter', '1')
+								localStorage.setItem('lastDate', curDate.toString())
 							}
-
-							postData();
-							// create progress button object
-							new ProgressButton(send_button, {
-								callback: function (instance) {
-									var progress = 0,
-										interval = setInterval(function () {
-												progress = Math.min(progress + Math
-													.random() * 0.1, 1);
-												instance._setProgress(progress);
-												if (send_email) {
-													instance._stop(send_email);
-													clearInterval(interval);
-												}
-											},
-											1000);
-								}
-							});
-							// remove dulplicated progress related dom when the button is clicked more than once
-							document.querySelectorAll('.progress')[0].remove();
 						}
-						form.classList.add('was-validated');
-					}, false);
-				});
-			}, false);
-		})();
+
+						postData();
+						// create progress button object
+						new ProgressButton(send_button, {
+							callback: function (instance) {
+								var progress = 0,
+									interval = setInterval(function () {
+										progress = Math.min(progress + Math
+											.random() * 0.1, 1);
+										instance._setProgress(progress);
+										if (send_email) {
+											instance._stop(send_email);
+											clearInterval(interval);
+										}
+									},
+										1000);
+							}
+						});
+						// remove dulplicated progress related dom when the button is clicked more than once
+						document.querySelectorAll('.progress')[0].remove();
+					}
+					form.classList.add('was-validated');
+				}, false);
+			});
+		}, false);
 	</script>
 
 	<!-- gReCaptcha popup (uncomment if you need a recaptcha integration) -->
