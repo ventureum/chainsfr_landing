@@ -50,9 +50,6 @@
 		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<!-- <script src="js/jquery.min.js"></script> -->
 	<!-- <script src="js/bootstrap.min.js"></script> -->
-	<!-- <script type="text/javascript"
-	src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U"></script> -->
-
 
 	<!-- SEO & Meta Tags starts here -->
 	<meta charset="utf-8">
@@ -265,8 +262,8 @@
 						</div>
 						<div class="col-lg-6 col-md-9 col-sm-11 col-12 text-center ml-auto mr-auto">
 							<form class="needs-validation radius10 px-50 pt-55 pb-45 bg-light" novalidate>
-								<h4 class="mb-20 color-darkgray text-left">Enter your email to receive <span
-										class="color-green">0.1&nbsp;ETH</span> in our demo on testnet.</h4>
+								<h4 class="mb-20 color-darkgray text-left">You can also receive <span
+										class="color-green">0.1&nbsp;ETH</span> by Email in our testnet demo.</h4>
 								<input required type="name" name="name" id="receiver_name" placeholder="Your name"
 									class="form-control input w-full color-heading placeholder-heading border-gray focus-action-4 mb-20" />
 								<input required type="email" name="email" id="destination_email"
@@ -362,7 +359,7 @@
 					like Venmo.&nbsp;&nbsp;But for Crypto.
 				</h2>
 				<div
-					class="col-11 col-sm-10 mt-35 mb-25 color-heading op-8 f-22 text-adaptive bold text-left text-md-center ml-auto mr-auto">
+					class="col-11 col-sm-10 mt-30 mb-20 color-black op-5 f-22 text-adaptive bold text-left text-md-center ml-auto mr-auto">
 					A non-custodial & open-source cryptocurrency payment service,<br> which is secure, fault-tolerant &
 					easy to use.
 				</div>
@@ -738,7 +735,7 @@
 				strings: [
 					// '🔒&nbsp;A non-custodial cryptocurrency payment service. &nbsp;',  
 					'🔒&nbsp;Non-custodial. &nbsp;Open-source. &nbsp;',
-					'✔️&nbsp;Send to anyone in seconds. &nbsp;Cancel if needed. &nbsp;',
+					'✔️&nbsp;Send in seconds. &nbsp;Cancel if needed. &nbsp;',
 					'🤩&nbsp;Say goodbye to accidental mistakes. &nbsp;',
 					'✨&nbsp;No more nonsensical crypto address. &nbsp;'
 					// '👌&nbsp;Easy deposit. &nbsp;No wallet required. &nbsp;',
@@ -758,9 +755,6 @@
 
 		// send email api
 		var send_email;
-		var receiverName = document.getElementById("receiver_name").value;
-		var destinationEmail = document.getElementById("destination_email").value;
-
 		async function postData() {
 			try {
 				const response = await fetch('https://tim.api.chainsfr.com/transfer', {
@@ -770,8 +764,8 @@
 					},
 					body: JSON.stringify({
 						"action": "PROMOTE_TRANSFER",
-						"receiverName": receiverName,
-						"destination": destinationEmail,
+						"receiverName": document.getElementById("receiver_name").value,
+						"destination": document.getElementById("destination_email").value
 					})
 				});
 				send_email = 1;
@@ -842,8 +836,6 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 	<!-- Fancybox 3 jQuery plugin JS (Open images and video in popup) -->
 	<!-- <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script> -->
-	<!-- Google maps JS API -->
-	<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDP6Ex5S03nvKZJZSvGXsEAi3X_tFkua4U"></script> -->
 	<!-- Slick 1.8.1 jQuery plugin JS (Sliders) -->
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	<!-- AOS 2.3.4 jQuery plugin JS (Animations) -->
