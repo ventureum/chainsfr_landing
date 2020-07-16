@@ -20,6 +20,38 @@
 	15. Ecommerce
 	16. Applications
 */
+
+/* customize style  */
+.fa-animation {
+  /* color: #E90606; */
+  margin: 0 3px;
+  font-size: 16px;
+  animation: pound .35s infinite alternate;
+  -webkit-animation: pound .35s infinite alternate;
+}
+
+@-webkit-keyframes pound {
+  to {
+    transform: scale(1.1)
+  }
+}
+
+@keyframes pound {
+  to {
+    transform: scale(1.1)
+  }
+}
+
+#message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#inner-message {
+  margin: 0 auto;
+}
+
 /* 1. Common styles */
 body {
   font-family: Proxima Nova;
@@ -73,30 +105,30 @@ nav.transparent {
   background: transparent;
 }
 
-.fixed-top.scrolled {
+nav.fixed-top.scrolled {
   background-color: #ffffff !important;
   box-shadow: 0px 0 10px #d2d2d2;
   transition: background-color 200ms linear;
 }
 
-.fixed-top.scrolled .dropdown-toggle {
+nav.fixed-top.scrolled .dropdown-toggle {
   color: #000000;
 }
 
-.fixed-top.scrolled #primary_login {
+nav.fixed-top.scrolled #primary_login {
   background-color: #1f1f1f;
   color: #ffffff;
 }
 
-.fixed-top.scrolled #primary_logo {
+nav.fixed-top.scrolled #primary_logo {
   content:url(../i/v3_full_dark.png);
 }
 
-.fixed-top.scrolled #nav_try_demo {
+nav.fixed-top.scrolled #nav_try_demo {
   color: #000000;
 }
 
-.fixed-top.scrolled #nav-collapse-button {
+nav.fixed-top.scrolled #nav-collapse-button {
   background-color: #ffffff;
   color: #000000;
 }
@@ -410,7 +442,7 @@ b, strong {
     right: 20px;
     transform: none;
     width: auto;
-    padding-left: 40px;
+    /* padding-left: 40px; */
   }
 }
 /* Smaller than 768px */
@@ -3069,7 +3101,8 @@ b, strong {
   top: 0;
 }
 .contact_9 .map_overlay {
-  background: rgba(30, 14, 98, 0.85);
+  background: #000000;
+  opacity: 80%;
 }
 @media (max-width: 1199.98px) {
   .contact_9 .text_big {

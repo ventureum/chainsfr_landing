@@ -309,6 +309,12 @@
 .btn.border-black:hover {
   border-color: #111111;
 }
+.btn.border-purple {
+  border: 2px solid #a08aff;
+}
+.btn.border-purple:hover {
+  border-color: #a08aff;
+}
 .btn.border-action-1 {
   border: 2px solid #f89c35;
   color: #f89c35;
@@ -882,36 +888,87 @@ input[type=radio] + label:before {
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 970px;
-  color: #ffffff;
+  max-width: 768px;
+  /* color: #ffffff; */
   z-index: 2000;
 }
 .alert-dismissable .close, .alert-dismissible .close {
   top: 0;
 }
+
 .alert.fixed-top {
   margin-top: 1rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .alert-primary {
   background: #1E0E62;
   border-color: #1E0E62;
 }
+
 .alert-secondary {
   background: #919DAB;
   border-color: #919DAB;
 }
+
 .alert-success {
-  background: #f89c35;
-  border-color: #f89c35;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
 }
+
+.alert-success hr {
+  border-top-color: #c9e2b3;
+}
+
+.alert-success .alert-link {
+  color: #2b542c;
+}
+
+.alert-info {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
+}
+
+.alert-info hr {
+  border-top-color: #a6e1ec;
+}
+
+.alert-info .alert-link {
+  color: #245269;
+}
+
+.alert-warning {
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  color: #8a6d3b;
+}
+
+.alert-warning hr {
+  border-top-color: #f7e1b5;
+}
+
+.alert-warning .alert-link {
+  color: #66512c;
+}
+
 .alert-danger {
-  background: #1e0e62;
-  border-color: #1e0e62;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
 }
-.alert-warning, .alert-info {
-  background: #4285f4;
-  border-color: #4285f4;
+
+.alert-danger hr {
+  border-top-color: #e4b9c0;
 }
+
+.alert-danger .alert-link {
+  color: #843534;
+}
+
 .alert-light {
   background: #ffffff;
   border-color: #ffffff;
@@ -12708,4 +12765,188 @@ picture[class^="color-filter-"], picture[class*=" color-filter-"]{
 
 .absolute {
   position: absolute;
+}
+
+/* Progress bar */
+/* .progress, .alert {
+  margin: 15px;
+}
+
+.alert {
+  display: none;
+} */
+
+
+/* Progress button */
+*, *:after, *::before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* General styles for all types of buttons */
+.btn.progress-button {
+	position: relative;
+	display: inline-block;
+	/* margin-top: 20px; */
+	/* outline: none; */
+	/* background: #8D73FF; */
+	/* border: 2px solid #000000; */
+	/* color: #000000; */
+	/* text-transform: uppercase; */
+	/* letter-spacing: 1px; */
+	/* font-size: 20px; */
+	/* font-weight: 700; */
+	/* line-height: 4; */
+	/* border-radius: 100px; */
+	/* text-align: center; */
+	/* height: 60px; */
+}
+
+.btn.progress-button[disabled],
+.btn.progress-button[disabled].state-loading {
+	cursor: default;
+}
+
+.btn.progress-button .content {
+	/* padding-top: 8px !important;  */
+	/* padding-bottom: -10px; */
+  position: relative;
+  display: block;
+  width: 100%;
+	/* line-height: 50px; */
+	/* height: 26px; */
+}
+
+.btn.progress-button .content::before,
+.btn.progress-button .content::after  {
+	width: 100%;
+	position: absolute;
+	padding-top: 96px;
+	/* right: 20px; */
+	color: #000000;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s 0.3s;
+	transition: opacity 0.3s 0.3s;
+}
+
+
+.btn.progress-button .content::before {
+	content: "Email sent!"; /* Checkmark for success */
+}
+
+.btn.progress-button .content::after {
+	content: "Email not sent."; /* Cross for error */
+}
+
+.btn.progress-button.state-success .content::before,
+.btn.progress-button.state-error .content::after {
+	opacity: 1;
+}
+
+.btn.progress-button.state-success {
+	/* background: #43B284; */
+}
+
+.btn.progress-button.state-error {
+	/* background: #aaaaaa; */
+}
+
+.notransition {
+	-webkit-transition: none !important;
+	transition: none !important;
+}
+
+.btn.progress-button .progress {
+	/* background: #000000; */
+	/* opacity: 0; */
+	height: 0px;
+}
+
+.btn.progress-button .progress-inner {
+	position: absolute;
+	left: 0;
+	background: #613dff;
+}
+
+.btn.progress-button[data-horizontal] .progress-inner {
+	top: 0;
+	width: 0;
+	height: 100%;
+	-webkit-transition: width 0.3s, opacity 0.3s;
+	transition: width 0.3s, opacity 0.3s;
+}
+
+
+/* Individual styles */
+/* Choose the effect(s) you want, delete the rest */
+
+/* Fill horizontal */
+/* ====================== */
+
+.btn.progress-button[data-style="fill"][data-horizontal] {
+	overflow: hidden;
+}
+
+.btn.progress-button[data-style="fill"][data-horizontal] .content {
+	z-index: 10;
+	-webkit-transition: -webkit-transform 0.03s;
+	transition: transform 0.03s;
+}
+
+.btn.progress-button[data-style="fill"][data-horizontal] .content::before,
+.btn.progress-button[data-style="fill"][data-horizontal] .content::after {
+	top: 100%;
+	right: auto;
+	left: 50%;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.btn.progress-button[data-style="fill"][data-horizontal].state-success .content,
+.btn.progress-button[data-style="fill"][data-horizontal].state-error .content {
+	-webkit-transform: translateY(-70px);
+	transform: translateY(-70px);
+}
+
+/* Shrink horizontal */
+/* ====================== */
+
+.btn.progress-button[data-style="shrink"] { /* common for horizontal and vertical */
+	overflow: hidden;
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: transform 0.2s;
+}
+
+.btn.progress-button[data-style="shrink"][data-horizontal] .content {
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+}
+
+.btn.progress-button[data-style="shrink"][data-horizontal] .content::before,
+.btn.progress-button[data-style="shrink"][data-horizontal] .content::after {
+	top: 100%;
+	right: auto;
+	left: 50%;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.btn.progress-button[data-style="shrink"][data-horizontal].state-loading {
+	-webkit-transform: scaleY(0.3);
+	transform: scaleY(0.3);
+}
+
+.btn.progress-button[data-style="shrink"][data-horizontal].state-loading .content {
+	opacity: 0;
+}
+
+.btn.progress-button[data-style="shrink"][data-horizontal].state-success .content,
+.btn.progress-button[data-style="shrink"][data-horizontal].state-error .content {
+	-webkit-transform: translateY(-70px);
+	transform: translateY(-70px);
 }
