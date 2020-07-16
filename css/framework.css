@@ -728,7 +728,7 @@ input[type=radio] + label:before {
 
 /* Other elements */
 .logo {
-  font-family: Proxima Nova;
+  font-family: proxima-nova, sans-serif;
   font-size: 24px;
   color: #1E0E62;
   font-weight: 700;
@@ -11776,11 +11776,11 @@ input[type=radio] + label:before {
 
 /* Font families */
 .f-heading {
-  font-family: Proxima Nova;
+  font-family: proxima-nova, sans-serif;
 }
 
 .f-main {
-  font-family: Proxima Nova;
+  font-family: proxima-nova, sans-serif;
 }
 
 /* Font sizes */
