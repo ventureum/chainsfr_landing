@@ -162,6 +162,19 @@ label {
   margin-bottom: 0;
   font-weight: 400;
   cursor: pointer;
+  display: block;
+  /* padding-left: 30px; */
+  /* text-indent: -38px; */
+}
+
+label.form-check-label {
+  /* padding-left: 30px; */
+  text-indent: -34px;
+}
+
+input[type=checkbox]:checked+label:before {
+  text-indent: 2px;
+  /* margin-left: 26px; */
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -170,7 +170,7 @@
 	<!-- Google Tag Manager (noscript) -->
 	<noscript>
 		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5H7P42" height="0" width="0"
-			style="display: none; visibility: hidden;" />
+			style="display: none; visibility: hidden;">
 	</noscript>
 	<!-- End Google Tag Manager (noscript) -->
 
@@ -218,7 +218,8 @@
 										class="dropdown-item link color-black">Blog</a>
 									<a href="https://github.com/ventureum/Chainsfr" target="_blank"
 										class="dropdown-item link color-black">Github</a>
-									<a href="#" onclick="return false;" id="intercom-changelog-nav"
+									<a href="https://github.com/ventureum/Chainsfr/releases/"
+										target="_blank"
 										class="dropdown-item link color-black">Change Log</a>
 									<a href="https://gsuite.google.com/marketplace/app/chainsfr_payment/754636752811"
 										target="_blank" class="dropdown-item link color-black">G
@@ -294,9 +295,13 @@
 							<form class="needs-validation radius10 px-50 pt-55 pb-45 bg-light"
 								novalidate>
 								<h4 class="mb-20 color-darkgray text-left">
-									You can also receive <span
-										class="color-green">0.1&nbsp;ETH</span> by Email in
-									our testnet demo.
+									You can also get started by receiving
+									<!-- <span class="color-green">0.1&nbsp;ETH</span> -->
+									<a href="#" onclick="return false;" data-toggle="tooltip"
+										title="This 0.1 ETH on testnet do NOT have any market value. It is only for the purpose to try Chainsfr. Click to Learn more."
+										id="intercom-help-testnet-eth"
+										class="color-green bold bg-gray">0.1&nbsp;ETH*</a>
+									in our testnet demo.
 								</h4>
 								<input required type="name" name="name" id="receiver_name"
 									placeholder="Your name"
@@ -323,9 +328,9 @@
 										<span aria-hidden="true">&times;</span>
 									</button>
 									<div>
-										<strong>🎉 Success!</strong>&nbsp; Now check your mailbox
-										to deposit 0.1 ETH
-										in our demo with the security answer
+										<strong>🎉 Success!</strong>&nbsp; The email usually takes
+										1-2 minutes to arrive your mailbox. Check your mailbox
+										and deposit with the security answer
 										<span class="color-green bold">welcome2020</span>.
 									</div>
 								</div>
@@ -388,12 +393,23 @@
 										up.
 									</div>
 								</div>
-								<div class="f-16 color-heading mt-15 ml-10 mr-10">
-									When you receive the email, use
-									<a href="#" onclick="return false;"
-										id="intercom-help-security-answer"
-										class="link color-heading underline">Security Answer</a>
-									<span class="color-green bold">welcome2020</span> to deposit.
+								<div class="form-check mt-20 ml-30">
+									<input type="checkbox" name="rules" id="agree_receive"
+										class="form-check-input d-none focus-action-4" value=""
+										required>
+									<label class="form-check-label color-heading w-full text-left"
+										for="agree_receive">You will receive the email in 1-2
+										minutes. Simply
+										use a Google account and
+										<a href="#" onclick="return false;" data-toggle="tooltip"
+											title="what is Security Answer?"
+											id="intercom-help-security-answer"
+											class="color-heading underline">Security
+											Answer</a>
+										<span class="color-green bold">welcome2020</span> to
+										deposit.
+										</a>
+									</label>
 								</div>
 							</form>
 						</div>
@@ -460,7 +476,7 @@
 					which is secure, fault-tolerant & easy to use.
 				</div>
 			</div>
-			<div class="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-10 ml-auto mr-auto f-18">
+			<div class="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 ml-auto mr-auto f-18">
 				<div
 					class="mb-40 pt-20 pb-50 row flex-row justify-content-center align-items-center radius10">
 					<div
@@ -537,7 +553,7 @@
 	<!-- Showcase 6 -->
 	<section class="pt-60 pb-20 bg-light text-left showcase_6">
 		<div class="container px-xl-0">
-			<div class="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-10 ml-auto mr-auto f-18">
+			<div class="col-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 ml-auto mr-auto f-18">
 				<div
 					class="mb-40 pt-20 pb-50 row flex-row justify-content-center align-items-center radius10">
 					<div
@@ -643,7 +659,7 @@
 			<div class="col-12 col-lg-12 col-xl-11 ml-auto mr-auto f-18">
 				<h2
 					class="col-12 col-sm-10 text-left text-md-center ml-auto mr-auto mb-40 pt-30 pb-45 color-black small">
-					Never Compromise on Security
+					Secure, Non-custodial & Open-source
 				</h2>
 				<div class="row justify-content-center justify-content-sm-between">
 					<div class="col-12 col-sm-10 col-md-6 col-lg-6 col-xl-4 pb-50 ml-auto mr-auto">
@@ -800,7 +816,7 @@
 							class="link color-black">Github</a>
 					</div>
 					<div class="mb-10">
-						<a href="#" onclick="return false;" id="intercom-changelog-footnote"
+						<a href="https://github.com/ventureum/Chainsfr/releases/" target="_blank"
 							class="link color-black">Change Log</a>
 					</div>
 					<div class="mb-10">
@@ -854,15 +870,19 @@
 						<a href="https://medium.com/chainsfr" target="_blank"
 							class="link color-black">Medium</a>
 					</div>
-					<div class="mb-10">
+					<!-- <div class="mb-10">
 						<a href="#" onclick="return false;" id="intercom-slack-footnote"
 							class="link color-black">
 							Slack
 						</a>
-					</div>
+					</div> -->
 					<div class="mb-10">
 						<a href="#" onclick="return false;" id="intercom-discord-footnote"
 							class="link color-black">Discord</a>
+					</div>
+					<div class="mb-10">
+						<a href="#" onclick="return false;" id="intercom-telegram-footnote"
+							class="link color-black">Telegram</a>
 					</div>
 				</div>
 			</div>
@@ -902,10 +922,10 @@
 			new Typed('#typed3', {
 				strings: [
 					// '🔒&nbsp;A non-custodial cryptocurrency payment service. &nbsp;',
-					'🔒&nbsp;Non-custodial. &nbsp;Open-source. &nbsp;',
+					'🔒&nbsp;Secure.&nbsp; Non-custodial.&nbsp; Open-source. &nbsp;',
 					'✔️&nbsp;Send in seconds. &nbsp;Cancel if needed. &nbsp;',
-					'🤩&nbsp;Say goodbye to accidental mistakes. &nbsp;',
-					'✨&nbsp;No more nonsensical crypto address. &nbsp;'
+					'🤩&nbsp;No more loss by accidental mistakes. &nbsp;',
+					// '✨&nbsp;Say Goodbye to nonsensical crypto address. &nbsp;'
 					// '👌&nbsp;Easy deposit. &nbsp;No wallet required. &nbsp;',
 					// '😊&nbsp;Take back control of your crypto experience. &nbsp;'
 				],
@@ -916,7 +936,7 @@
 				// shuffle: true,
 				startDelay: 500,
 				backDelay: 8000,
-				cursorChar: '_',
+				// cursorChar: '_',
 				loop: true
 			})
 		})
@@ -953,10 +973,10 @@
 					}
 				} else {
 					send_email = 1
-					window.Intercom('update', { 
-						name: receiver_name, 
-						email: destination_email, 
-						created_at: Math.floor(Date.now() / 1000), 
+					window.Intercom('update', {
+						name: receiver_name,
+						email: destination_email,
+						created_at: Math.floor(Date.now() / 1000),
 						landing_receive: true
 					})
 					$('#success_message').show()
