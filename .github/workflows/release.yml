@@ -16,7 +16,10 @@ jobs:
     steps:
     - name: Checkout Git
       uses: actions/checkout@v2
-      
+
+    - run: npm run build
+      if: github.event_name == 'push'
+
     - run: aws s3 sync ./ s3://www.chainsfr.com --delete
       if: github.event_name == 'push'
     

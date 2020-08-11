@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "build": "css-minify -d ./css"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/timothywangdev/chainsfer_landing/issues"
   },
-  "homepage": "https://github.com/timothywangdev/chainsfer_landing#readme"
+  "homepage": "https://github.com/timothywangdev/chainsfer_landing#readme",
+  "devDependencies": {
+    "css-minify": "^1.0.1"
+  }
 }

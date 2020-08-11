@@ -1,2 +1,4 @@
 *copy*.html
 i2/
+node_modules/
+css-dist/
